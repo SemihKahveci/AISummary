@@ -3,7 +3,7 @@ import multer from "multer";
 import { summarizePdfToOnePager } from "../services/summary.service";
 import { generateOnePagerPdf } from "../services/pdf.service";
 import { storePdf } from "../services/storage.service";
-import { sanitizeText } from "../utils/sanitize";
+import { sanitizeSummary } from "../utils/sanitize";
 import { getCachedResult, setCachedResult } from "../utils/idempotency";
 
 export type OnePagerRequest = {
@@ -36,7 +36,7 @@ export async function handleOnePagerRequest(
     language: input.language ?? "tr",
   });
 
-  const sanitizedSummary = sanitizeText(summary);
+  const sanitizedSummary = sanitizeSummary(summary);
   const pdfBuffer = await generateOnePagerPdf({
     summary: sanitizedSummary,
     title: input.fileName ?? "AI Summary",

@@ -11,6 +11,7 @@ export function onepagerPromptTrV1(input: OnePagerPromptInput): {
     "Sen uzman bir ozetleme asistansin.",
     "Cevap tek sayfalik PDF ozet formatina uygun olmalidir.",
     "Gereksiz tekrar, pazarlama dili ve uzun girislerden kacın.",
+    "Markdown formatinda yaz: basliklar icin ##, alt basliklar icin ###, listeler icin - kullan.",
   ].join(" ");
 
   const user = [
