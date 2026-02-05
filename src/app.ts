@@ -23,7 +23,7 @@ app.get("/health", (_req, res) => {
 app.use("/api", buildOnePagerRouter());
 app.use("/api", buildChatRouter());
 
-const port = Number(process.env.PORT ?? 3000);
+const port = Number(process.env.PORT ?? 5055);
 app.listen(port, () => {
   console.log(`API ayakta: http://localhost:${port}`);
 });
